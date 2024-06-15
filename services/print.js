@@ -1,14 +1,13 @@
 var screenshot = require('desktop-screenshot')
 const fs = require('fs');
 const path = require('path');
-
 let is_printing = false
 let count = 0
 
-function takePrint() {
+const countSpan = document.querySelector('#count')
+async function takePrint() {
     if (is_printing) {
-        
-
+        countSpan.textContent = count
         const filePath = path.join(__dirname, 'imgs', `screenshot${count}.jpg`);
         count++
         const dir = path.dirname(filePath);
@@ -66,7 +65,7 @@ var videoOptions = {
     transitionDuration: 0, // seconds
     videoBitrate: 1024,
     videoCodec: 'libx264',
-    size: '640x?',
+    size: '720x?',
     audioBitrate: '128k',
     audioChannels: 2,
     format: 'mp4',

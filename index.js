@@ -2,8 +2,8 @@ const { app, Tray, Menu, nativeImage, BrowserWindow } = require('electron')
 
 const createWindow = () => {
     const win = new BrowserWindow({
-        width: 200,
-        height: 300,
+        width: 300,
+        height: 450,
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,

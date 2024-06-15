@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="style.css">
     <title>Janna</title>
 </head>
+
 <body>
-    <h1>Janna</h1>
+    <h1 class="title">Janna</h1>
+    <h2 class="subtitle">ScreenCapture</h2>
+
+    <div class="inputs-container">
+        <label for="interval" class="input-labels">
+            <p>Capture interval:</p>
+            <input type="number" name="interval" id="interval-input" class="input" min="1">
+        </label>
+
+        <label for="video-local" class="input-labels off">
+            <p>Video location:</p>
+            <input type="text" name="video-local" id="video-local" class="input" disabled>
+        </label>
+    </div>
+
+    <div class="btn-container">
+        <button id="play" class="btn"><img src="./assets/play.png" alt="play button"></button>
+        <button id="pause" class="btn"><img src="./assets/pausa.png" alt="pause button"></button>
+        <button id="cancel" class="btn"><img src="./assets/cancelar.png" alt="cancel button"></button>
+        <button id="video-export" class="btn"><img src="./assets/video-export.png" alt="video export button"></button>
+    </div>
+
+    <p class="print-text">Prints: <span id="print-count">0</span></p>
+    <dir class="footer">
+        <p>Developed by Deyweson</p>
+        <a href="https://github.com/Deyweson">Source-Code - GitHub</a>
+    </dir>
+
+
+    <!-- 
+
     <button id="startbtn">Start</button>
     <button id="stopbtn">Stop</button>
-    <button id="videobtn">Generete Video</button>
-    <p>Print Count <span>0</span></p>
+    <button id="videobtn">Generate Video</button>
+    <p>Print Count <span id="count">0</span></p> -->
+
 
     <script type="module" src="./services/print.js"></script>
 </body>
+
 </html>
