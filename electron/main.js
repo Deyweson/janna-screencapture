@@ -8,7 +8,7 @@ const createWindow = () => {
             nodeIntegration: true,
             contextIsolation: false,
         },
-        resizable: false,
+        // resizable: false,
     })
 
     win.loadFile('index.html')
