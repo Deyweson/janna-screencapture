@@ -17,8 +17,6 @@ let count = 0
 
 async function takePrint() {
     if (is_printing) {
-        printCount.textContent = count
-
         const filePath = path.join(__dirname, 'imgs', `screenshot${count}.jpg`);
         const dir = path.dirname(filePath);
 
@@ -32,17 +30,13 @@ async function takePrint() {
         });
 
         count++
+        printCount.textContent = count
     }
 }
 
 
 
 playBtn.addEventListener('click', () => {
-
-    if (Number(printInterval.value) <= 0) {
-        console.log('Interval invalid')
-        return;
-    }
     is_printing = true
     playBtn.disabled = true
     pauseBtn.disabled = false

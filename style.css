@@ -70,7 +70,7 @@ body {
     text-align: center;
 }
 .btn:disabled{
-    background-color: black;
+    opacity: 0.6;
 }
 
 .btn img {
@@ -96,6 +96,5 @@ body {
 
 
 .off{
-    text-decoration: line-through;
-    
+    text-decoration: line-through;  
 }
