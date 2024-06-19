@@ -1,20 +1,21 @@
-const { app, Tray, Menu, nativeImage, BrowserWindow } = require('electron')
+const { app } = require('electron')
+const controlWindow = require('./controlWindow')
 
-const createWindow = () => {
-    const win = new BrowserWindow({
-        width: 300,
-        height: 550,
-        webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false,
-        },
-        // resizable: false,
-    })
+function App() {
 
-    win.loadFile('index.html')
+    const win = require('./createWindow')
+    const tray = require('./tray')
+
+    const { toggle } = controlWindow(win, tray)
+
+    tray.on('click', toggle)
 }
 
+app.whenReady().then(App)
 
-app.whenReady().then(() => {
-    createWindow()
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+        app.quit()
+    }
 })
+
