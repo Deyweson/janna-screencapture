@@ -9,34 +9,39 @@
 </head>
 
 <body>
-    <h1 class="title">Janna</h1>
-    <h2 class="subtitle">ScreenCapture</h2>
+    <div class="container">
+        <h1 class="title">Janna</h1>
+        <h2 class="subtitle">ScreenCapture</h2>
 
-    <div class="inputs-container">
-        <label for="interval" class="input-labels off">
-            <p>Capture interval:</p>
-            <input type="number" name="interval" id="interval-input" class="input" min="1" disabled>
-        </label>
+        <div class="inputs-container">
+            <label for="interval" class="input-labels off">
+                <p>Capture interval:</p>
+                <input type="number" name="interval" id="interval-input" class="input" min="1" disabled>
+            </label>
 
-        <label for="video-local" class="input-labels off">
-            <p>Video location:</p>
-            <input type="text" name="video-local" id="video-local" class="input" disabled>
-        </label>
+            <label for="video-local" class="input-labels off">
+                <p>Video location:</p>
+                <input type="text" name="video-local" id="video-local" class="input" disabled>
+            </label>
+        </div>
+
+        <div class="btn-container">
+            <button id="play" class="btn"><img src="./assets/play.png" alt="play button"></button>
+            <button id="pause" class="btn"><img src="./assets/pausa.png" alt="pause button"></button>
+            <button id="cancel" class="btn"><img src="./assets/cancelar.png" alt="cancel button"></button>
+            <button id="video-export" class="btn"><img src="./assets/video-export.png"
+                    alt="video export button"></button>
+        </div>
+
+        <p class="print-text">Prints: <span id="print-count">0</span></p>
+        <dir class="footer">
+            <p>Developed by Deyweson</p>
+            <a href="https://github.com/Deyweson">Source-Code - GitHub</a>
+        </dir>
+
+
+
     </div>
-
-    <div class="btn-container">
-        <button id="play" class="btn"><img src="./assets/play.png" alt="play button"></button>
-        <button id="pause" class="btn"><img src="./assets/pausa.png" alt="pause button"></button>
-        <button id="cancel" class="btn"><img src="./assets/cancelar.png" alt="cancel button"></button>
-        <button id="video-export" class="btn"><img src="./assets/video-export.png" alt="video export button"></button>
-    </div>
-
-    <p class="print-text">Prints: <span id="print-count">0</span></p>
-    <dir class="footer">
-        <p>Developed by Deyweson</p>
-        <a href="https://github.com/Deyweson">Source-Code - GitHub</a>
-    </dir>
-
 
     <script type="module" src="./src/printService.js"></script>
 </body>

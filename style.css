@@ -3,15 +3,19 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
     width: 300px;
-    border-radius: 20px 20px 0px 0px;
+    
     font-family: "JetBrains Mono", monospace;
     overflow: hidden;
 }
-
+.container{
+    border-radius: 20px;
+    background-color: white;
+}
 /* titles */
 .title {
     font-size: 40px;
