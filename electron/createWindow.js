@@ -8,6 +8,8 @@ function createWindow() {
     frame: false,
     resizable: false,
     fullscreen: false,
+    transparent: true,
+    skipTaskbar: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
