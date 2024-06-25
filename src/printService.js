@@ -13,49 +13,32 @@ const printCount = document.querySelector('#print-count')
 const printInterval = document.querySelector('#interval-input')
 
 const ffmpegPath = require('ffmpeg-static');
+import { takePrint } from "./takePrint.js"
+
+
 
 
 let is_printing = false
 let count = 0
 
-async function takePrint() {
-    if (is_printing) {
-        const filePath = path.join(__dirname, 'temp', 'imgs', `ss${count}.jpg`);
-        const dir = path.dirname(filePath);
-
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
-        }
-
-        screenshot(filePath, function (error, complete) {
-            if (error) console.log("Screenshot failed", error);
-            else console.log("Screenshot succeeded");
-        });
-
-        count++
-        printCount.textContent = count
-    }
-}
-
 
 
 playBtn.addEventListener('click', () => {
-    is_printing = true
-    playBtn.disabled = true
     pauseBtn.disabled = false
+    playBtn.disabled = true
+    const interval = Number(printInterval.value)
+    takePrint.start(interval, count, printCount)
 })
 pauseBtn.addEventListener('click', () => {
-    is_printing = false
     pauseBtn.disabled = true
     playBtn.disabled = false
+    takePrint.pause()
 })
 cancelBtn.addEventListener('click', () => {
     is_printing = false
     count = 0
     //TO-DO: Delete imgs
 })
-
-setInterval(takePrint, 100)
 
 
 

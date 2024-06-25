@@ -4,12 +4,12 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 300,
     height: 500,
-    show: false,
-    frame: false,
-    resizable: false,
-    fullscreen: false,
-    transparent: true,
-    skipTaskbar: true,
+    // show: true,
+    // frame: true,
+    // resizable: true,
+    // fullscreen: false,
+    // transparent: true,
+    // skipTaskbar: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
