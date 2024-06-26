@@ -11,10 +11,14 @@ import { makeVideo } from "./makeVideo.js"
 
 let count = 0
 
+document.querySelector('#interval-input').addEventListener('input', function (e) {
+    this.value = this.value.replace(/[^\d.]/g, '');
+})
+
 playBtn.addEventListener('click', () => {
     pauseBtn.disabled = false
     playBtn.disabled = true
-    const interval = Number(printInterval.value)
+    const interval = Number(printInterval.value) * 1000
     takePrint.start(interval, count, printCount)
 })
 pauseBtn.addEventListener('click', () => {
