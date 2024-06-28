@@ -9,7 +9,7 @@ function createWindow() {
     resizable: false,
     fullscreen: false,
     transparent: true,
-    skipTaskbar: false,
+    skipTaskbar: true,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,

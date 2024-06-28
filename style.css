@@ -7,8 +7,6 @@
 }
 
 body {
-
-
     font-family: "JetBrains Mono", monospace;
     overflow: hidden;
 
@@ -18,7 +16,6 @@ body {
 }
 
 .container {
-
     border-radius: 20px;
     background-color: white;
     width: 300px;
